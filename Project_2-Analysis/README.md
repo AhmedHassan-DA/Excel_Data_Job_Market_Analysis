@@ -41,7 +41,7 @@ It includes detailed information on:
 
 #### 📥 Extract
 
-- I first used Power Query to extract the original data (`data_salary_all.xlsx`) and create two queries:
+- I first used Power Query to extract the original data [data_salary_all.xlsx](data_salary_all.xlsx) and create two queries:
     - 🗃️ First one with all the data jobs information.
     - 🔧 The second listing the skills for each job ID.
 
