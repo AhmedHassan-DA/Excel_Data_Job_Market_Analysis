@@ -9,6 +9,19 @@ This dashboard provides job seekers and professionals with actionable insights i
 
 ---
 
+**Summary**  
+This dynamic Excel dashboard translates the analysis into an actionable tool for job seekers and professionals. Features include:  
+- **Role vs. Salary Comparison**: Horizontal bar charts ranking median salaries (Senior Engineers: $135k vs. Analysts: $95k).  
+- **Geographic Insights**: Color-coded map visualizations highlighting U.S. salary premiums and remote-work opportunities.  
+- **Custom Salary Calculator**: Filters by job title, country, and schedule type (remote/hybrid) using formulas like:  
+  ```excel  
+  =MEDIAN(IF((job_title=selected)*(country=selected)*(salary>0), salary))  
+  ```  
+- **Schedule Type Trends**: Identifies growing demand for remote roles (35% of high-paying positions).  
+The dashboard ([1_Salary_Dashboard.xlsx](1_Salary_Dashboard.xlsx)) empowers users to benchmark compensation, prioritize skill investments, and align job searches with market realities.
+
+---
+
 **Research Objectives**  
 1. Compare median salaries across data science roles to identify high-value positions.  
 2. Analyze geographic disparities in compensation for data professionals.  
