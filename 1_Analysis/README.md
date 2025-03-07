@@ -137,4 +137,6 @@ Investing in high-value technical skills yields greater returns in salary negoti
 **Conclusion**  
 This project leverages Excel’s advanced analytics tools to dissect trends in the data science job market. Key findings emphasize the importance of technical specialization, geographic considerations, and skill prioritization for career advancement. By aligning skill development with market demands, professionals can position themselves for higher compensation and sustained relevance in this evolving field.  
 
+**Access the Analysis file**: [1_Project_Analysis.xlsx](1_Project_Analysis.xlsx)  
+
 ---  
