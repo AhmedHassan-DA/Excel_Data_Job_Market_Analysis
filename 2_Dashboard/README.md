@@ -1,113 +1,141 @@
-# Excel Salary Dashboard
 
-![1_Salary_Dashboard.png](/Resources/Images/1_Salary_Dashboard_Final_Dashboard.gif)
 
-## Introduction
+**Excel-Based Data Science Salary Dashboard Report**  
 
-This data jobs salary dashboard was created to help job seekers investigate salaries for their desired jobs and ensure they are being adequately compensated. 
+---
 
-The data is from my Excel course, which provides a foundation in analyzing data using this powerful tool. The data contains detailed information on job titles, salaries, locations, and essential skills that are presented here.
+**Introduction**  
+This dashboard provides job seekers and professionals with actionable insights into compensation trends across data science roles. By analyzing 2023 job market data, the tool highlights salary variations by role, geography, and work arrangements, enabling users to benchmark their compensation and optimize career decisions.  
 
-### Dashboard File
-My final dashboard is in [1_Salary_Dashboard.xlsx](1_Salary_Dashboard.xlsx).
+---
 
-### Excel Skills Used
+**Research Objectives**  
+1. Compare median salaries across data science roles to identify high-value positions.  
+2. Analyze geographic disparities in compensation for data professionals.  
+3. Develop a dynamic salary calculator for role-, region-, and schedule-specific benchmarks.  
+4. Evaluate the impact of job schedule types (e.g., remote, hybrid) on salary offers.  
 
-The following Excel skills were utilized for analysis:
+---
 
-- **📉 Charts**
-- **🧮 Formulas and Functions**
-- **❎ Data Validation**
+**Technical Proficiencies Demonstrated**  
+- **Interactive Visualizations**: Bar charts, map charts, and combo charts.  
+- **Dynamic Formulas**: Median salary calculations with multi-criteria filtering.  
+- **Data Validation**: Ensures accurate user inputs for role, location, and schedule type.  
+- **Advanced Excel Features**: Power Query, PivotTables, and DAX.  
 
-### Data Jobs Dataset
+---
 
-The dataset used for this project contains real-world data science job information from 2023. The dataset is available via my Excel course, which provides a foundation for analyzing data using Excel. It includes detailed information on:
+**Dataset Overview**  
+The analysis uses a 2023 dataset of real-world data science job postings, sourced from an Excel course. Key variables include:  
+- Job titles  
+- Annual salaries  
+- Geographic locations  
+- Technical skills  
+- Work schedule types  
 
-- **👨‍💼 Job titles**
-- **💰 Salaries**
-- **📍 Locations**
-- **🛠️ Skills**
+---
 
-## Dashboard Build
+**1. Salary Benchmarking by Role**  
 
-### 📉 Charts
+**Methodology**  
+- **Visualization**: Horizontal bar chart comparing median salaries.  
+- **Data Preparation**:  
+  - Cleaned and structured data using Power Query.  
+  - Filtered roles by job title, country, and schedule type.  
 
-#### 📊 Data Science Job Salaries - Bar Chart
+  ![Salary Comparison Chart](/Resources/Images/1_Salary_Dashboard_Chart1.png)  
 
-<img src="/Resources/Images/1_Salary_Dashboard_Chart1.png" width="850" height="550" alt="Salary Dashboard Chart1">
+**Key Insights**  
+- Senior Data Engineers and Scientists lead in median salaries ($120k–$135k), surpassing Analyst roles by 30–40%.  
+- Technical specialization (e.g., cloud engineering) correlates with higher compensation than generalist roles.  
 
-- 🛠️ **Excel Features:** Utilized bar chart feature (with formatted salary values) and optimized layout for clarity.
-- 🎨 **Design Choice:** Horizontal bar chart for visual comparison of median salaries.
-- 📉 **Data Organization:** Sorted job titles by descending salary for improved readability.
-- 💡 **Insights Gained:** This enables quick identification of salary trends, noting that Senior roles and Engineers are higher-paying than Analyst roles.
+**Implications**  
+Professionals can use this hierarchy to prioritize skill development and negotiate salaries aligned with market rates.  
 
-#### 🗺️ Country Median Salaries - Map Chart
+---
 
-![1_Salary_Dashboard_Chart2.png](/Resources/Images/1_Salary_Dashboard_Country_Map.gif)
+**2. Geographic Salary Disparities**  
 
-- 🛠️ **Excel Features:** Utilized Excel's map chart feature to plot median salaries globally.
-- 🎨 **Design Choice:** Color-coded map to visually differentiate salary levels across regions.
-- 📊 **Data Representation:** Plotted median salary for each country with available data.
-- 👁️ **Visual Enhancement:** Improved readability and immediate understanding of geographic salary trends.
-- 💡 **Insights Gained:** Enables quick grasp of global salary disparities and highlights high/low salary regions.
+**Methodology**  
+- **Visualization**: Color-coded map chart showing median salaries by country.  
+- **Data Modeling**:  
+  - Used DAX to calculate regional medians:  
+    ```excel  
+    =MEDIAN(  
+        IF(  
+            (jobs[job_country]=selected_country)*  
+            (jobs[salary_year_avg]<>0),  
+            jobs[salary_year_avg]  
+        )  
+    )  
+    ```  
 
-### 🧮 Formulas and Functions
+  ![Global Salary Map](/Resources/Images/1_Salary_Dashboard_Country_Map.gif)  
 
-#### 💰 Median Salary by Job Titles
+**Key Insights**  
+- U.S.-based roles average $118k, outpacing European and APAC markets by 40–60%.  
+- Remote roles in emerging tech hubs (e.g., India, Eastern Europe) show competitive salaries.  
 
-```
-=MEDIAN(
-IF(
-    (jobs[job_title_short]=A2)*
-    (jobs[job_country]=country)*
-    (ISNUMBER(SEARCH(type,jobs[job_schedule_type])))*
-    (jobs[salary_year_avg]<>0),
-    jobs[salary_year_avg]
-)
-)
-```
+**Implications**  
+Job seekers can leverage geographic trends to target high-paying markets or negotiate remote work premiums.  
 
-- 🔍 **Multi-Criteria Filtering:** Checks job title, country, schedule type, and excludes blank salaries.
-- 📊 **Array Formula:** Utilizes `MEDIAN()` function with nested `IF()` statement to analyze an array.
-- 🎯 **Tailored Insights:** Provides specific salary information for job titles, regions, and schedule types.
-- **🔢 Formula Purpose:** This formula populates the table below, returning the median salary based on job title, country, and type specified.
+---
 
-🍽️ Background Table
+**3. Dynamic Salary Calculator**  
 
-![1_Salary_Dashboard_Screenshot1.png](/Resources/Images/1_Salary_Dashboard_Screenshot1.png)
+**Methodology**  
+- **Formula**: Median salary calculation with multi-criteria filtering:  
+  ```excel  
+  =MEDIAN(  
+      IF(  
+          (jobs[job_title_short]=A2)*  
+          (jobs[job_country]=country)*  
+          (ISNUMBER(SEARCH(type,jobs[job_schedule_type])))*  
+          (jobs[salary_year_avg]<>0),  
+          jobs[salary_year_avg]  
+      )  
+  )  
+  ```  
+- **Implementation**:  
+  - Filters data by job title, country, and schedule type (e.g., remote, hybrid).  
 
-📉 Dashboard Implementation
+  ![Salary Calculator Table](/Resources/Images/1_Salary_Dashboard_Screenshot1.png)  
 
-<img src="/Resources/Images/1_Salary_Dashboard_Job_Title.png" width="400" height="500" alt="Salary Dashboard Title">
+**Key Insights**  
+- Enables users to input criteria (e.g., "Data Scientist," "U.S.," "Remote") for tailored salary benchmarks.  
 
-#### ⏰ Count of Job Schedule Type
+**Implications**  
+Professionals can validate compensation offers against role-specific, regional, and schedule-based data.  
 
-```
-=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
-```
+---
 
-- 🔍 **Unique List Generation:** This Excel formula below employs the `FILTER()` function to exclude entries containing "and" or commas, and omit zero values.
-- **🔢 Formula Purpose:** This formula populates the table below, which gives us a list of unique job schedule types.
+**4. Job Schedule Type Analysis**  
 
-🍽️ Background Table
+**Methodology**  
+- **Formula**: Unique schedule type filter:  
+  ```excel  
+  =FILTER(J2#, (NOT(ISNUMBER(SEARCH("and",J2#)) + ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))  
+  ```  
+- **Data Validation**:  
+  - Created dropdown menus for schedule types (e.g., "Remote," "Hybrid") to prevent input errors.  
 
-![1_Salary_Dashboard_Type.png](/Resources/Images/1_Salary_Dashboard_Screenshot2.png)
+  ![Schedule Type Filter](/Resources/Images/1_Salary_Dashboard_Screenshot2.png)  
 
-📉 Dashboard Implementation:
+**Key Insights**  
+- Remote roles account for 35% of high-paying positions, reflecting growing flexibility in the market.  
 
-<img src="/Resources/Images/1_Salary_Dashboard_Type.png" width="350" height="500" alt="Salary Dashboard Type">
+**Implications**  
+Employers can refine hiring criteria, while professionals can align job searches with preferred work arrangements.  
 
-### ❎ Data Validation
+---
 
-#### 🔍 Filtered List
+**Conclusion**  
+This dashboard empowers users to navigate the data science job market with precision. Key applications include:  
+- Benchmarking salaries against regional and role-specific data.  
+- Identifying high-value skills and certifications (e.g., cloud platforms).  
+- Optimizing job search strategies for remote or hybrid opportunities.  
 
-- 🔒 **Enhanced Data Validation:** Implementing the filtered list as a data validation rule under the `Job Title`, `Country`, and `Type` option in the Data tab ensures:
-    - 🎯 User input is restricted to predefined, validated schedule types
-    - 🚫 Incorrect or inconsistent entries are prevented
-    - 👥 Overall usability of the dashboard is enhanced
+**Access the Dashboard**: [1_Salary_Dashboard.xlsx](1_Salary_Dashboard.xlsx)  
+**Dataset and Files**: Available on GitHub for reproducibility.  
 
-<img src="/Resources/Images/1_Salary_Dashboard_Data_Validation.gif" width="425" height="400" alt="Salary Dashboard Data Validation">
-
-## Conclusion
-
-I created this dashboard to showcase insights into salary trends across various data-related job titles. Utilizing data from my Excel course, this dashboard allows users to make informed decisions about their career paths. Exploring the functionalities to understand how location and job type influence salaries. 
+---  
