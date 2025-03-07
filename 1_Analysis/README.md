@@ -31,7 +31,7 @@ This project explores the 2023 data science job market to uncover trends in skil
 ---
 
 **Dataset Overview**  
-The analysis utilizes a 2023 dataset of real-world data science job postings, sourced from an Excel course designed to teach foundational data analysis techniques. Key variables include:  
+The analysis utilizes a dataset of over 30,000 real-world data science job postings from 2023, scrapped from the top job-listing platforms. Key variables include:  
 - Job titles  
 - Annual salaries  
 - Geographic locations  
