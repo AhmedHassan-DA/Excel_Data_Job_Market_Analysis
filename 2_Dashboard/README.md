@@ -136,6 +136,5 @@ This dashboard empowers users to navigate the data science job market with preci
 - Optimizing job search strategies for remote or hybrid opportunities.  
 
 **Access the Dashboard**: [1_Salary_Dashboard.xlsx](1_Salary_Dashboard.xlsx)  
-**Dataset and Files**: Available on GitHub for reproducibility.  
 
 ---  
