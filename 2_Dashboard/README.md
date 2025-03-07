@@ -1,6 +1,6 @@
 
 
-**Excel-Based Data Science Salary Dashboard Report**  
+**Data Science Salary Dashboard Report**  
 
 ---
 
