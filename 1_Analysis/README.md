@@ -38,12 +38,32 @@ The analysis utilizes a 2023 dataset of real-world data science job postings, so
 **Methodology**  
 - **Data Preparation**:  
   - Extracted raw data from `data_salary_all.xlsx` using Power Query.  
+
+    - data_jobs_all
+
+        ![2_Project_Analysis_Screenshot1.png](/Resources/Images/2_Project_Analysis_Screenshot1.png)
+
+    - data_job_skills
+
+        ![2_Project_Analysis_Screenshot2.png](/Resources/Images/2_Project_Analysis_Screenshot2.png)
+
   - Created two structured datasets: one for job details (`data_jobs_all`) and another mapping skills to job IDs (`data_job_skills`).  
+
+    - data_jobs_all
+
+        ![2_Project_Analysis_Screenshot3.png](/Resources/Images/2_Project_Analysis_Screenshot3.png)
+
+    - data_job_skills
+
+        ![2_Project_Analysis_Screenshot4.png](/Resources/Images/2_Project_Analysis_Screenshot4.png)
+
   - Cleaned data by standardizing text, removing irrelevant columns, and correcting formatting inconsistencies.  
 
 **Key Insights**  
 - A positive correlation exists between the number of skills required and median salary, particularly for roles such as Senior Data Engineer and Data Scientist.  
 - Roles requiring fewer specialized skills (e.g., Business Analyst) exhibit lower median salaries, underscoring the premium placed on technical expertise.  
+
+ ![2_Project_Analysis_Chart1.png](/Resources/Images/2_Project_Analysis_Chart1.png)
 
 **Implications**  
 Professionals seeking higher compensation should prioritize acquiring specialized skills, particularly in advanced data engineering and analytics.  
@@ -67,6 +87,9 @@ Professionals seeking higher compensation should prioritize acquiring specialize
 - Senior Data Engineers and Data Scientists command the highest median salaries globally, with U.S.-based roles offering significantly higher compensation than international counterparts.  
 - Geographic disparities are most pronounced in tech-centric roles, likely due to industry concentration in U.S. markets.  
 
+    ![2_Project_Analysis_Chart2.png](/Resources/Images/2_Project_Analysis_Chart2.png)  
+
+
 **Implications**  
 Job seekers and employers should account for regional salary benchmarks during negotiations, particularly in high-demand technical roles.  
 
@@ -79,9 +102,15 @@ Job seekers and employers should account for regional salary benchmarks during n
   - Linked `data_jobs_all` and `data_job_skills` tables via a Power Pivot relationship using `job_id`.  
   - Aggregated skill frequency data to identify trends.  
 
+  ![2_Project_Analysis_Screenshot5.png](/Resources/Images/2_Project_Analysis_Screenshot5.png)
+
+  ![2_Project_Analysis_Screenshot6.png](/Resources/Images/2_Project_Analysis_Screenshot6.png)
+
 **Key Insights**  
 - SQL and Python dominate as essential skills, reflecting their foundational role in data manipulation and analysis.  
 - Cloud technologies (AWS, Azure) and big data tools (Spark) are increasingly prioritized, signaling industry shifts toward scalable data solutions.  
+
+    ![2_Project_Analysis_Chart3.png](/Resources/Images/2_Project_Analysis_Chart3.png)
 
 **Implications**  
 Professionals should focus on mastering SQL/Python and emerging cloud platforms to remain competitive. Training programs should align curricula with these industry demands.  
@@ -97,6 +126,8 @@ Professionals should focus on mastering SQL/Python and emerging cloud platforms 
 **Key Insights**  
 - Technical skills like Python, Oracle, and SQL correlate with the highest median salaries.  
 - Soft skills (e.g., PowerPoint, Word) show minimal impact on compensation, highlighting the premium on technical proficiency.  
+
+    ![2_Project_Analysis_Chart4.png](/Resources/Images/2_Project_Analysis_Chart4.png)
 
 **Implications**  
 Investing in high-value technical skills yields greater returns in salary negotiations, particularly in tech-driven roles.  
