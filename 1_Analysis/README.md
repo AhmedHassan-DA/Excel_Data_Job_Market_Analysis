@@ -11,7 +11,7 @@ As a data enthusiast and former job seeker, I observed a gap in accessible data 
 
 This project explores the 2023 data science job market to uncover trends in skill demand, regional salary variations, and high-value competencies. Using Excel tools like Power Query, PivotTables, DAX, and Power Pivot, the analysis identifies a strong correlation between specialized technical skills (e.g., Python, SQL, AWS) and higher median salaries, particularly for roles like Senior Data Engineer and Data Scientist. Key findings reveal a 23% salary premium for roles requiring 5+ skills, significant geographic pay gaps (U.S. roles outperform international peers by 40%), and shifting industry priorities toward cloud technologies. The insights guide professionals in skill development and employers in compensation benchmarking.
 - Analysis file is available [HERE](1_Project_Analysis.xlsx).
-
+- Dashboard is available [HERE](1_Salary_Dashboard.xlsx).
 
 ---
 
